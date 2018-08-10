@@ -1,0 +1,355 @@
+@inproceedings{eiben1998adaptive,
+  title={Adaptive penalties for evolutionary graph coloring},
+  author={Eiben, AE and Van Der Hauw, JK},
+  abstract={In this paper we consider a problem independent constraint handling mechanism, Stepwise Adaptation of Weights (SAW) and show its working on graph coloring problems. SAW-ing technically belongs to the penalty function based approaches and amounts to modifying the penalty function during the search. We show that it has a twofold benefit. First, it proves to be rather insensitive to its technical parameters, thereby providing a general, problem independent way to handle constrained problems. Second, it leads to superior EA performance. In an extensive series of comparative experiments we show that the SAW-ing EA outperforms a powerful graph coloring heuristic algorithm, DSatur, on the hardest graph instances and has a linear scale-up behaviour.},
+  booktitle={Artificial Evolution},
+  pages={95--106},
+  year={1998},
+  organization={Springer}
+}
+
+
+@book{wierzbicki1981mathematical,
+  title={A mathematical basis for satisficing decision making},
+  author={Wierzbicki, Andrzej P},
+  OPTabstract={},
+  year={1981},
+  publisher={Springer}
+}
+
+
+@incollection{nakayama1984satisficing,
+  title={Satisficing trade-off method for multiobjective programming},
+  author={Nakayama, Hirotaka and Sawaragi, Yoshikazu},
+  booktitle={Interactive decision analysis},
+  pages={113--122},
+  year={1984},
+  publisher={Springer}
+}
+
+@TechReport{borges1998basis,
+  title={A basis for future successes in multiobjective combinatorial optimization},
+  author={Borges, Pedro Castro and Hansen, Michael Pilegaard},
+  abstract={This paper addresses global convexity in multiobjective combinatorial optimization: a phenomenon that has previously been studied and shown to exist in a number of single objective combinatorial problems. Global convexity can imply that local optima are concentrated in a very small region of the solution space when distance is measured according to the topology of a neighborhood function. Global convexity is therefore not an absolute characteristic of an optimization problem, but refers of the topology that has been induced in the solution space. Local search based heuristics can exploit global convexity by choosing neighborhood functions that tend to concentrate the search in these regions and it has been claimed that global convexity plays an important role in the recent successes of many metaheuristics.
+This report generalizes and extends those investigations for the case where multiple objectives exist by analyzing several points where global convexity might play a role. This analysis builds on generating local optima for well known scalarizing functions, covering the entire set of weights. We study the heuristic concentration of local optima, the distance between local optima for different weights over the non-dominated frontier and the stability of local optima for small weight variations. If global convexity can be established over local areas of the non- dominated frontier, it must also be exploitable in new metaheuristics for MOCO optimization.
+We consider the 2-OPT neighborhood function on a three objective traveling salesman problem and use both the weighted sums program and the augmented Tchebycheff program. The results indicate that there indeed exists global convexity and foresee the development of new local search heuristics for approximating the non-dominated frontier in MOCO.},
+  institution =  {Technical University of Denmark},
+  year = 	 {1998},
+  OPTkey = 	 {},
+  OPTtype = 	 {},
+  number = 	 {IMM-REP-1998-8},
+  OPTaddress = 	 {},
+  OPTmonth = 	 {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@inproceedings{knowles2005multiobjective,
+  title={Multiobjective optimization on a budget of 250 evaluations},
+  author={Knowles, Joshua and Hughes, Evan J},
+  abstract={In engineering and other ‘real-world’ applications, multiobjective optimization problems must frequently be tackled on a tight evaluation budget — tens or hundreds of function evaluations, rather than thousands. In this paper, we investigate two algorithms that use advanced initialization and search strategies to operate better under these conditions. The first algorithm, Bin_MSOPS, uses a binary search tree to divide up the decision space, and tries to sample from the largest empty regions near ‘fit’ solutions. The second algorithm, ParEGO, begins with solutions in a latin hypercube and updates a Gaussian processes surrogate model of the search landscape after every function evaluation, which it uses to estimate the solution of largest expected improvement. The two algorithms are tested using a benchmark suite of nine functions of two and three objectives — on a budget of only 250 function evaluations each, in total. Results indicate that the two algorithms search the space in very different ways and this can be used to understand performance differences. Both algorithms perform well but ParEGO comes out on top in seven of the nine test cases after 100 function evaluations, and on six after the first 250 evaluations.},
+  booktitle={Evolutionary Multi-Criterion Optimization},
+  pages={176--190},
+  year={2005},
+  organization={Springer}
+}
+
+@inproceedings{knowles2009noisy,
+  title={Noisy multiobjective optimization on a budget of 250 evaluations},
+  author={Knowles, Joshua and Corne, David and Reynolds, Alan},
+  booktitle={Evolutionary Multi-Criterion Optimization},
+  abstract = {We consider methods for noisy multiobjective optimization, specifically methods for approximating a true underlying Pareto front when function evaluations are corrupted by Gaussian measurement noise on the objective function values. We focus on the scenario of a limited budget of function evaluations (100 and 250), where previously it was found that an iterative optimization method — ParEGO — based on surrogate modeling of the multiobjective fitness landscape was very effective in the non-noisy case. Our investigation here measures how ParEGO degrades with increasing noise levels. Meanwhile we introduce a new method that we propose for limited-budget and noisy scenarios: TOMO, deriving from the single-objective PB1 algorithm, which iteratively seeks the basins of optima using nonparametric statistical testing over previously visited points. We find ParEGO tends to outperform TOMO, and both (but especially ParEGO), are quite robust to noise. TOMO is comparable and perhaps edges ParEGO in the case of budgets of 100 evaluations with low noise. Both usually beat our suite of five baseline comparisons.},
+  pages={36--50},
+  year={2009},
+  organization={Springer}
+}
+
+@InProceedings{Cristescu2015ParEGOupdate,
+  author = 	 {Bianca-Cristina Cristescu and Joshua Knowles},
+  title = 	 {Surrogate-Based Multiobjective Optimization: {ParEGO} Update and Test},
+  OPTcrossref =  {},
+  abstract = {We consider ParEGO, a well-known algorithm in
+the Evolutionary Multiobjective Optimization (EMO) community,
+and make improvements to the implementation itself and
+to some of the underlying algorithm components. ParEGO is
+a surrogate-based multiobjective optimization algorithm based
+on the Kriging/DACE model, designed specifically for problems
+with expensive evaluation functions. First described in 2006, it
+has been successful in empirical comparison studies and realworld
+applications (e.g., in water network design and iterative
+experimentation) since its release, but its code relies on now
+outdated matrix routines, which we here replace by more modern
+libraries. The code is also ported to GPU for further acceleration.
+We also add options to the ParEGO algorithm itself: Originally
+limited to runs of up to about 250 function evaluations (due to
+the heavy computational cost of some matrix operations on the
+full search trace), we now include methods for discarding (or
+‘forgetting’) selected previous search points. We find that the
+pure implementation updates reproduce the performance of the
+original ParEGO release across a suite of benchmark problems;
+further, the algorithmic changes enable scaling up of ParEGO
+runs (i.e., no. generations) without significant loss of accuracy of
+the model in tests of up to 500 evaluations. The project’s code
+is now available for use by the EMO community and its uptake
+in applications with expensive functions is encouraged.},
+  booktitle = {Proceedings of the UK Workshop on Computational Intelligence},
+  year = 	 {2015},
+  OPTeditor = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTpages = 	 {},
+  OPTmonth = 	 {},
+  OPTaddress = 	 {},
+  OPTorganization = {},
+  OPTpublisher = {},
+  note = 	 {(To appear)},
+  OPTannote = 	 {}
+}
+
+@article{Koski1987Norm,
+abstract = {Methods for generating Pareto optimal solutions to a multicriterion optimization problem are considered. The norm methods based on the scalarization of the original multicriterion problem by using the l p-norm are discussed in a unified form and a parametrization suitable for different interactive design systems is suggested. In addition, an alternative approach which, instead of scalarization, reduces the dimension of the multicriterion problem is proposed. This is called the partial weighting method and it can beinterpreted as a generalization of the traditional scalarization technique where the weighted sum of the criteria is used as the objective function. The first of these two approaches (norm method) is very flexible from a designer's point of view and it can be applied also in non-convex cases to the determination of the Pareto optimal set whereas the latter (partial weighting method) is especially suitable for problems where the number of criteria is large. Throughout the article several illustrative truss examples are presented to augment the scanty collection of multicriterion problems treated in the literature of optimum structural design.},
+author = {Koski, Juhani and Silvennoinen, Risto},
+doi = {10.1002/nme.1620240606},
+issn = {1097-0207},
+journal = {International Journal for Numerical Methods in Engineering},
+month = jun,
+number = {6},
+pages = {1101--1121},
+publisher = {John Wiley \& Sons, Ltd},
+title = {Norm methods and partial weighting in multicriterion optimization of structures},
+volume = {24},
+year = {1987}
+}
+@incollection{Wang2013Whatever,
+author = {Wang, Rui and Purshouse, Robin C. and Fleming, Peter J.},
+booktitle = {Evolutionary Multi-Criterion Optimization SE - 27},
+doi = {10.1007/978-3-642-37140-0\_27},
+editor = {Purshouse, RobinC. and Fleming, PeterJ. and Fonseca, CarlosM. and Greco, Salvatore and Shaw, Jane},
+isbn = {978-3-642-37139-4},
+keywords = {Preferences,co-evolution,decision making,interactive},
+language = {English},
+pages = {337--351},
+publisher = {Springer Berlin Heidelberg},
+series = {Lecture Notes in Computer Science},
+title = {Whatever Works Best for You -- A New Method for a Priori and Progressive Multi-objective Optimisation},
+volume = {7811},
+year = {2013}
+}
+@book{LeRoux2010Multiple,
+author = {{Le Roux}, Brigitte and Rouanet, Henry},
+isbn = {1412968976},
+publisher = {Sage},
+title = {Multiple correspondence analysis},
+volume = {163},
+year = {2010}
+}
+@article{Sacks1989Design,
+abstract = {Many scientific phenomena are now investigated by complex computer models or codes. A computer experiment is a number of runs of the code with various inputs. A feature of many computer experiments is that the output is deterministic--rerunning the code with the same inputs gives identical observations. Often, the codes are computationally expensive to run, and a common objective of an experiment is to fit a cheaper predictor of the output to the data. Our approach is to model the deterministic output as the realization of a stochastic process, thereby providing a statistical basis for designing experiments (choosing the inputs) for efficient prediction. With this model, estimates of uncertainty of predictions are also available. Recent work in this area is reviewed, a number of applications are discussed, and we demonstrate our methodology with an example. CR - Copyright \&\#169; 1989 Institute of Mathematical Statistics},
+author = {Sacks, Jerome and Welch, William J and Mitchell, Toby J and Wynn, Henry P},
+doi = {10.2307/2245858},
+issn = {08834237},
+journal = {Statistical Science},
+month = nov,
+number = {4},
+pages = {409--423},
+publisher = {Institute of Mathematical Statistics},
+title = {Design and Analysis of Computer Experiments},
+volume = {4},
+year = {1989}
+}
+@article{Scheffe1958Experiments,
+abstract = {A theory is developed for experiments with mixtures of q components whose purpose is the empirical prediction of the response to any mixture of the components, when the response depends only on the proportion of the components and not on the total amount. CR - Copyright \&\#169; 1958 Royal Statistical Society},
+author = {Scheff\'{e}, Henry},
+doi = {10.2307/2983895},
+issn = {00359246},
+journal = {Journal of the Royal Statistical Society. Series B (Methodological)},
+month = jan,
+number = {2},
+pages = {344--360},
+publisher = {Wiley for the Royal Statistical Society},
+title = {Experiments With Mixtures},
+volume = {20},
+year = {1958}
+}
+@article{Jones1998Efficient,
+author = {Jones, DonaldR. and Schonlau, Matthias and Welch, WilliamJ.},
+doi = {10.1023/A:1008306431147},
+file = {:Users/acse/Downloads/art\%3A10.1023\%2FA\%3A1008306431147.pdf:pdf},
+issn = {0925-5001},
+journal = {Journal of Global Optimization},
+keywords = {Bayesian global optimization,Kriging,Random function,Response surface,Stochastic process,Visualization},
+language = {English},
+number = {4},
+pages = {455--492},
+publisher = {Kluwer Academic Publishers},
+title = {Efficient Global Optimization of Expensive Black-Box Functions},
+volume = {13},
+year = {1998}
+}
+@inproceedings{Hansen2010Comparing,
+abstract = {This paper presents results of the BBOB-2009 benchmarking of 31 search algorithms on 24 noiseless functions in a black-box optimization scenario in continuous domain. The runtime of the algorithms, measured in number of function evaluations, is investigated and a connection between a single convergence graph and the runtime distribution is uncovered. Performance is investigated for different dimensions up to 40-D, for different target precision values, and in different subgroups of functions. Searching in larger dimension and multi-modal functions appears to be more difficult. The choice of the best algorithm also depends remarkably on the available budget of function evaluations. \&copy; 2010 ACM.},
+address = {New York, NY, USA},
+author = {Hansen, Nikolaus and Auger, Anne and Ros, Raymond and Finck, Steffen and Po\v{s}\'{\i}k, Petr},
+booktitle = {Proceedings of the 12th Annual Conference Companion on Genetic and Evolutionary Computation},
+doi = {10.1145/1830761.1830790},
+file = {:Users/acse/Downloads/p1689-hansen.pdf:pdf},
+isbn = {978-1-4503-0073-5},
+keywords = {benchmarking,black-box optimization},
+pages = {1689--1696},
+publisher = {ACM},
+series = {GECCO '10},
+title = {Comparing Results of 31 Algorithms from the Black-box Optimization Benchmarking {BBOB-2009}},
+year = {2010}
+}
+@article{Knowles2006ParEGO,
+abstract = {This paper concerns multiobjective optimization in scenarios where each solution evaluation is financially and/or temporally expensive. We make use of nine relatively low-dimensional, nonpathological, real-valued functions, such as arise in many applications, and assess the performance of two algorithms after just 100 and 250 (or 260) function evaluations. The results show that NSGA-II, a popular multiobjective evolutionary algorithm, performs well compared with random search, even within the restricted number of evaluations used. A significantly better performance (particularly, in the worst case) is, however, achieved on our test set by an algorithm proposed herein-ParEGO-which is an extension of the single-objective efficient global optimization (EGO) algorithm of Jones et al. ParEGO uses a design-of-experiments inspired initialization procedure and learns a Gaussian processes model of the search landscape, which is updated after every function evaluation. Overall, ParEGO exhibits a promising performance for multiobjective optimization problems where evaluations are expensive or otherwise restricted in number.},
+author = {Knowles, J},
+journal = {Evolutionary Computation, IEEE Transactions on},
+doi = {10.1109/TEVC.2005.851274},
+file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Knowles - 2006 - ParEGO A Hybrid Algorithm With On-Line Landscape Approximation for Expensive Multiobjective Optimization Problems.pdf:pdf},
+isbn = {1089-778X VO - 10},
+keywords = {Approximation algorithms,Design and analysis of computer experiments (DACE),Evolutionary computation,Gaussian processes,Gaussian processes model,Instruments,Kriging,NSGA-II multiobjective evolutionary algorithm,Optimization methods,ParEGO,Pareto analysis,Pareto optima,Pareto optimization,Performance evaluation,Search methods,Testing,design of experiments,design-of-experiments,efficient global optimization (EGO),evolutionary computation,expensive black-box functions,expensive multiobjective optimization problems,landscape approximation,metamodels,multiobjective optimization,nondominated sorting genetic algorithm II (NSGA-II,online landscape approximation,optimisation,performance assessment,response surfaces,search landscape,search problems,single-objective efficient global optimization alg,test suites},
+number = {1},
+pages = {50--66},
+title = {{ParEGO}: A Hybrid Algorithm With On-Line Landscape Approximation for Expensive Multiobjective Optimization Problems},
+volume = {10},
+year = {2006}
+}
+@article{Giagkiozis2013Overview,
+abstract = {In this work we present an overview of the most prominent population-based algorithms and the methodologies used to extend them to multiple objective problems. Although not exact in the mathematical sense, it has long been recognised that population-based multi-objective optimisation techniques for real-world applications are immensely valuable and versatile. These techniques are usually employed when exact optimisation methods are not easily applicable or simply when, due to sheer complexity, such techniques could potentially be very costly. Another advantage is that since a population of decision vectors is considered in each generation these algorithms are implicitly parallelisable and can generate an approximation of the entire Pareto front at each iteration. A critique of their capabilities is also provided.},
+annote = {From Duplicate 2 ( },
+author = {Giagkiozis, Ioannis and Purshouse, Robin C. and Fleming, Peter J.},
+doi = {10.1080/00207721.2013.823526},
+file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Giagkiozis, Purshouse, Fleming - 2013 - An overview of population-based algorithms for multi-objective optimisation.pdf:pdf},
+issn = {0020-7721},
+journal = {International Journal of Systems Science},
+keywords = {ant colony optimisation,artificial immune,differential evolution,estimation of distribution algorithms,genetic algorithms,particle swarm optimisation,systems},
+month = aug,
+pages = {1--28},
+publisher = {Taylor \& Francis},
+title = {An Overview of Population-Based Algorithms for Multi-Objective Optimisation},
+volume = {pp},
+year = {2013}
+}
+@article{Marler2004Survey,
+annote = {NBI - Das and Dennis 1998},
+author = {Marler, R.T. and Arora, J.S.},
+doi = {10.1007/s00158-003-0368-6},
+file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Marler, Arora - 2004 - Survey of multi-objective optimization methods for engineering.pdf:pdf},
+issn = {1615-147X},
+journal = {Structural and Multidisciplinary Optimization},
+keywords = {multi-criteria,multi-objective,optimization},
+month = apr,
+number = {6},
+pages = {369--395},
+title = {Survey of Multi-Objective Optimization Methods for Engineering},
+volume = {26},
+year = {2004}
+}
+@article{Zhou2011Multiobjective,
+author = {Zhou, Aimin and Qu, Bo-Yang and Li, Hui and Zhao, Shi-Zheng and Suganthan, Ponnuthurai Nagaratnam and Zhang, Qingfu},
+doi = {10.1016/j.swevo.2011.03.001},
+file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Zhou et al. - 2011 - Multiobjective evolutionary algorithms A survey of the state of the art.pdf:pdf},
+issn = {22106502},
+journal = {Swarm and Evolutionary Computation},
+keywords = {evolutionary multiobjective optimization,multiobjective evolutionary algorithms,multiobjective optimization},
+month = mar,
+number = {1},
+pages = {32--49},
+publisher = {Elsevier B.V.},
+title = {Multiobjective Evolutionary Algorithms: A Survey of the State of the Art},
+volume = {1},
+year = {2011}
+}
+@article{Beyer2007,
+annote = {three types of uncertainties: deterministic (within a domain), probablilstic (pdf), possiblistic (fuzzy)},
+author = {Beyer, Hans Georg and Sendhoff, Bernhard},
+doi = {10.1016/j.cma.2007.03.003},
+file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Beyer, Sendhoff - 2007 - Robust optimization – A comprehensive survey.pdf:pdf},
+issn = {00457825},
+journal = {Computer Methods in Applied Mechanics and Engineering},
+keywords = {design,direct search methods,evolutionary computation,handling design uncertainties,mathematical programming,noisy optimization,robust,robust optimization},
+month = jul,
+number = {33-34},
+pages = {3190--3218},
+title = {Robust Optimization - A Comprehensive Survey},
+volume = {196},
+year = {2007}
+}
+@article{Deb1995Simulated,
+abstract = {The success of binary-coded genetic algorithms (GAs) in problems having discrete search space largely depends on the coding used to represent the problem variables and on the crossover operator that propagates building-blocks from parent strings to children strings. In solving optimization problems having continuous search space, binary-coded GAs discretize the search space by using a coding of the problem variables in binary strings. However, the coding of real-valued variables in...},
+author = {Deb, Kalyanmoy and Agrawal, Ram Bhushan},
+file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Deb, Agrawal - 1994 - Simulated Binary Crossover for Continuous Search Space.pdf:pdf;:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Deb, Agrawal - 1994 - Simulated Binary Crossover for Continuous Search Space The crossover operator is believed to be the main search op.pdf:pdf},
+journal = {Complex Systems},
+keywords = {croisement,genetique,multiobjectifs,optimisation},
+pages = {1--34},
+title = {Simulated Binary Crossover for Continuous Search Space},
+volume = {9},
+year = {1995}
+}
+
+@article{deb2002fast,
+  title={A fast and elitist multiobjective genetic algorithm: {NSGA-II}},
+  author={Deb, Kalyanmoy and Pratap, Amrit and Agarwal, Sameer and Meyarivan, TAMT},
+  journal={Evolutionary Computation, IEEE Transactions on},
+  volume={6},
+  number={2},
+  pages={182--197},
+  year={2002},
+  publisher={IEEE}
+}
+
+@article{giagkiozis2014generalized,
+  title={Generalized decomposition and cross entropy methods for many-objective optimization},
+  author={Giagkiozis, Ioannis and Purshouse, Robin C and Fleming, Peter J},
+  journal={Information Sciences},
+  volume={282},
+  pages={363--387},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@inproceedings{berger2011uncertainty,
+  title={Uncertainty-Aware Exploration of Continuous Parameter Spaces Using Multivariate Prediction},
+  author={Berger, Wolfgang and Piringer, Harald and Filzmoser, Peter and Gr{\"o}ller, Eduard},
+  booktitle={Computer Graphics Forum},
+  volume={30},
+  number={3},
+  pages={911--920},
+  year={2011},
+  organization={Wiley Online Library}
+}
+
+@article{farmani2003Self,
+  title={Self-adaptive fitness formulation for constrained optimization},
+  author={Farmani, Raziyeh and Wright, Jonathan},
+  journal={Evolutionary Computation, IEEE Transactions on},
+  volume={7},
+  number={5},
+  pages={445--455},
+  year={2003},
+  publisher={IEEE}
+}
+
+@article{kotrlik2001organizational,
+  title={Organizational Research: Determining Appropriate Sample Size in Survey Research Appropriate Sample Size in Survey Research},
+  author={Kotrlik, Joe W Kotrlik Joe W and Higgins, Chadwick C Higgins Chadwick C},
+  journal={Information Technology, Learning, and Performance Journal},
+  volume={19},
+  number={1},
+  pages={43},
+  year={2001}
+}
+
+@ARTICLE{zitzler1999multiobjective, 
+author={Zitzler, E. and Thiele, L.}, 
+journal={Evolutionary Computation, IEEE Transactions on}, 
+title={Multiobjective evolutionary algorithms: a comparative case study and the strength {Pareto} approach}, 
+year={1999}, 
+volume={3}, 
+number={4}, 
+pages={257-271}, 
+keywords={evolutionary computation;knapsack problems;optimisation;Pareto dominance relationship;clustering procedure;conflicting objectives;continuously updated population;digital hardware-software multiprocessor system;extended 0/1 knapsack problem;multiobjective evolutionary algorithms;multiobjective optimization;nondominated solutions;population diversity;strength Pareto approach;Computer aided software engineering;Computer architecture;Cost function;Evolutionary computation;Hardware;Multiprocessing systems;Pareto optimization;Sampling methods;Software systems;Space exploration}, 
+doi={10.1109/4235.797969}, 
+ISSN={1089-778X},}
