@@ -65,8 +65,9 @@
 \tableofcontents
 
 \section{Introduction}
-\subsection{Context}
-The framework for robust design optimization, developed under PSi T8 WP1, is aimed at design activities involving multiple objectives and featuring uncertainties of various sources. The framework intends to support the goal of a ``right-first-time-design", where appropriate design choices are made based on computer simulations alone. In this context, a high quality solution does not necessarily have to demonstrate the very best possible performance under a single set of assumptions, but rather to perform well under a large variety of uncertain factors. The requirements for the framework were previously identified in milestone report WP1 M3. The current report, WP1 M4, describes the methods adopted and developed by the Theme 8 research team to deliver the ``must have'' requirements identified at M3.
+This study presents a framework for robust design optimization, aimed at design activities involving multiple objectives and featuring uncertainties of various sources.
+The framework intends to support the goal of a ``right-first-time-design", where appropriate design choices are made based on computer simulations alone.
+In this context, a high quality solution does not necessarily have to demonstrate the very best possible performance under a single set of assumptions, but rather to perform well under a large variety of uncertain factors.
 
 \subsection{Background}
 The ability of numerical simulations to predict the performance of a candidate design is constantly increasing. While some simulations can produce high-fidelity outputs relatively quickly, a typical mesh-based simulation can run for several hours, and even days. Even if a design team has access to supercomputing resources, the extensive run-time still implies that perhaps only a few hundred candidate designs can be explored using high-fidelity modelling resources. Unfortunately, conventional multi-objective optimization algorithms, such as NSGA-II \cite{deb2002fast}, implemented in commercial packages typically require tens of thousands of function evaluations to converge on a high quality solution~\cite{Hansen2010Comparing,Zhou2011Multiobjective}. Therefore, the search for a promising design using expensive evaluation functions on a limited computational budget poses a great challenge.
@@ -116,7 +117,7 @@ By maximizing the expected improvement, exploration and exploitation of the glob
 The following assumptions are made by the EGO algorithm:
 \begin{enumerate}
 	\item Expensive evaluation function --- this justifies the amount of computation effort expended between consecutive function evaluations.
-	\item Black-box evaluation function --- no other information is know on the function and its derivatives that can support estimation of the function without full evaluation.
+	\item Black-box evaluation function --- no other information is known on the function and its derivatives that can support estimation of the function without full evaluation.
 	\item Deterministic problem --- uncertainties are not present in any part of the problem formulation, and therefore repeated evaluations of the same design yield the same result.
 	\item Single objective problem --- multi-objective optimization is not considered.
 	\item Locally smooth and continuous evaluation function --- the DACE model assumes spatial correlation in decision-space.
@@ -678,80 +679,9 @@ If the above validation procedure is conducted for all inputs and the values of 
 
 The effects of the attitude to risk within the sParEGO algorithm can be examined in a similar manner by using $I_\text{sp}$ to calculate $\Delta_\text{sp} = \brabs{I_\text{sp}-I_\text{act}}$ and $\rho = \Delta_\text{sp} / \Delta_\text{r}$. Different parameter settings will change the closeness-to-target value, and hence these parameters can be tuned.
 
-\subsection{Log}
-\label{subsec:log}
-The search history is stored in an archive, which allows the user to monitor the process, and provides tools to steer the search in a more effective manner. Two types of information is maintained: (a) the evaluated designs at every stage and (b) the user interactions with the search.
-
-The archive provides information on the effects of various choices on the progress of the search. For example, the robustness metric value depends on the specified confidence level, or threshold value. By setting a different value for the parameters, the convergence graph is likely to change. It is also possible to highlight whether the best solution at every stage amongst the evaluated solutions has changed due to the parameter changes. Based on the influence of the parameters on past evaluations, the decision facilitator can identify a different setting for the parameters/preferences that seems more promising than the setting used so far.
-
-\subsection{Visualisation and decision making tools}
-\label{subsec:Visualisation}
-The implementation of the framework in Liger will include some tools to track the current status of the identified solutions, and to specify preferences to steer the search towards preferable regions. Three types of 2D plots are already available in Liger: scatter plot, matrix scatter plot and parallel coordinates plot. These tools will be enhanced by the following functionalities:
-\begin{itemize}
-	\item Brushing -- when a solution is highlighted in one plot, all its instances in other plots are highlighted as well.
-	\item Random variable visualisation --  by default, a random variable is represented by its expected value.
-		Once selected, a box-plot around the expected value is presented to represent the variable's statistical properties.
-		See Figure~\ref{fig:visualisation} for a similar visualisation used in~\cite{Berger2011uncertainty}.
-	\item Preferences can be expressed either as a region of interest in performance space, or by brushing solutions as more attractive than others.
-		The region of interest is defined by setting a cursor on the relevant plots.
-\end{itemize}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.6\textwidth]{figures/visualisation.jpg}
-\caption{Representation of uncertainties in a scatter plot and parallel coordinates plot. The probability density function is visualised as a box-plot around a selected solution. Reproduced from~\cite{Berger2011uncertainty}.}
-\label{fig:visualisation}
-%% label for entire figure
-\end{figure}
 
 \section{Conclusion}
 \label{sec:conclusion}
-\subsection{Meeting WP1 requirements}
-The framework presented in this document provides solutions to the requirements identified as crucial for this work-package. A summary of the framework's ability to meet the ``must have" and ``should have" requirements, defined in the previous milestone, is given in Tables~\ref{tab:requirements} and~\ref{tab:should have requirements}, respectively. The requirements are referred to by the numbering in WP1 M3 document. Non-methodological requirements such as user interface are not included in this summary.
-
-\begin{table}
-\caption{Work package 1 ``must have" requirements addressed by the framework}
-\begin{tabularx}{\textwidth}{lccX} \toprule
-{\bf Req.}	& {\bf Covered}	& {\bf Section}							& \multicolumn{1}{c}{\bf Comments}	\\ \midrule
-4.a			&  \cmark 		& \ref{subsec:Types of Variables}		& 									\\
-5.a			&  \cmark 		& \ref{subsubsec:uncertain inputs}		& 									\\
-5.b			&  \cmark		& \ref{subsec:Shared Decision Variables}& 									\\
-6.a			&  \cmark		& \ref{subsec:preference}				& 									\\
-6.b--c		&  \cmark		& \ref{subsec:constraints}				& 									\\
-6.e			&  \xmark		& 										& The current preference scheme does not translate attributes ranking into targets / region of interest\\
-7.a			&  \cmark		& \ref{sec:Robustness Indicators}		& 									\\
-7.b			&  \cmark		& \ref{subsec:validation}				& 						 			\\
-8.f			&  \cmark		& \ref{subsec:model fidelity}			& 						 			\\
-9.a			&  \cmark		& \ref{subsubsec:simple uncertainty quantification},\ref{subsubsec:mixed complexity functions},\ref{subsec:convergence}	& \\
-10.d		&  \cmark		& \ref{subsec:log}						& 									\\
-11.a		&  \cmark		& \ref{subsec:log}						& 									\\
-12--14,18.a &  \cmark		& \ref{subsec:Visualisation}			& 									\\
-15			&  \cmark		& \ref{subsec:convergence}				& 									\\
-18.b		&  \cmark		& \ref{subsec:Shared Decision Variables}& 									\\
-\bottomrule
-\end{tabularx}
-\label{tab:requirements}
-\end{table}
-
-\begin{table}
-\caption{Recommendations for WP1 ``should have" requirements}
-\begin{tabularx}{\textwidth}{lccX} \toprule
-{\bf Req.}	& {\bf Covered}	& {\bf Section}						& \multicolumn{1}{c}{\bf Comments}	\\ \midrule
-5.a.$iii$	&  \cmark 		& \ref{subsec:Types of Variables}	& 									\\
-5.c			&  \cmark 		& \ref{subsec:model fidelity}		& 									\\
-6.d			&  \cmark 		& \ref{subsec:preference}			& 									\\
-6.j			&  \xmark 		& 									& This is addressed in WP2 and WP3	\\
-6.k			&  \cmark 		& \ref{subsec:constraints}			& 									\\
-8.g			&  \cmark 		& \ref{subsec:model fidelity}		& 									\\
-9.d			&  \cmark 		& \ref{subsubsec:simple uncertainty quantification}	& 					\\
-9.e			&  \xmark 		& 									& Customising the algorithm has a low priority at this stage \\
-9.g			&  \cmark 		& 									& The algorithm is set with default parameters \\
-11.b		&  \cmark		& \ref{subsec:log}					& 									\\
-13.b, 16	&  \xmark		& 									& It would be beneficial to include these features if the project's time-scale allows \\
-\bottomrule
-\end{tabularx}
-\label{tab:should have requirements}
-\end{table}
 
 \subsection{Framework limitations and risks}
 This section summarises the assumptions made within the framework described in this document, and the risks associated with these assumptions.
@@ -761,17 +691,8 @@ This section summarises the assumptions made within the framework described in t
 	\item \emph{The problem formulation is appropriately elicited.} The outcomes from any use of the framework can only be as good as the information provided to it. Methodologies for robustly eliciting the problem formulation lie outside the scope of the project.
 \end{itemize}
 
-\subsection{Next steps in WP1}
-Most of the methods described in this document have now been implemented in Tigon as part of WP1. Some development work remains to produce a working version. The next stages to verify the methodology are as follow:
-\begin{itemize}
-	\item Study the behaviour of sParEGO with a set of controllable stochastic multiobjective problems. A tool for constructing this sort of benchmark problems was created for this purpose. By controlling the difficulty of the multiobjective problem and the characteristics of the uncertainties, both the algorithm's performance and the effects of decision facilitator's choices can be examined.
-	\item Complete the formulation of a pseudo case study for a robust design optimization problem, demonstrating all complexities addressed by this document. The problem will be implemented in software that can be interfaced to Liger (e.g. Matlab) and documented in the M5 report.
-	\item Demonstrate the use of the framework on the pseudo case study problem, and document these findings in the M6 report. By this stage, the user interface and visualisation tools will have been implemented in Liger.
-	\item Write the M8 report that concludes WP1. The report will highlight the strengths of the framework and its potential added value over existing practice conducted in JLR. Recommendations for further development towards a higher technology-readiness-level will be provided.
-\end{itemize}
-
 
 \bibliographystyle{IEEEtran}
-\bibliography{WP1M4References}
+\bibliography{sparegoReferences}
 
 \end{document}
