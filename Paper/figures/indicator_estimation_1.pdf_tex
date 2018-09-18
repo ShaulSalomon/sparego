@@ -1,0 +1,74 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'indicator_estimation_1.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{129.19702148bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.99240793)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{indicator_estimation_1.pdf}}%
+    \put(0.94913179,0.01728906){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}$x$\end{tabular}}}}%
+    \put(0.07836868,0.88805217){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}$s\brr{x}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{indicator_estimation_1.pdf}}%
+    \put(1.0067526,0.941669){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.03731843\unitlength}\raggedright  \end{minipage}}}%
+    \put(1.31773941,0.16420195){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.17829907\unitlength}\raggedright  \end{minipage}}}%
+    \put(0.2525213,0.01728906){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}$x^a$\end{tabular}}}}%
+    \put(0.33959761,0.01728906){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}$x^b$\end{tabular}}}}%
+    \put(0.42667392,0.01728906){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}$x^c$\end{tabular}}}}%
+    \put(0.68790286,0.01728906){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}$x^d$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{indicator_estimation_1.pdf}}%
+    \put(0.77497917,0.85902669){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$s\brr{x}$\end{tabular}}}}%
+    \put(0.77497917,0.74292494){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\mu_s\brr{x}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{indicator_estimation_1.pdf}}%
+    \put(0.77497917,0.62682323){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\pm\sigma_s\brr{x}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{indicator_estimation_1.pdf}}%
+    \put(0.8040046,0.01728906){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}$x^e$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
