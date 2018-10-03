@@ -17,7 +17,7 @@
 \usepackage{wrapfig}
 \usepackage[export]{adjustbox}
 \usepackage[font=scriptsize]{caption}
-\usepackage{mwe}
+
 
 
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=black]{hyperref}
@@ -70,7 +70,9 @@
 \maketitle
 
 \begin{abstract}
-Computationally expensive simulation is playing an increasing role in the design of complex engineered products. Design optimization in this context is challenging because only a very limited budget of candidate designs (commonly in the range 250 to 500) can be evaluated using the high-fidelity simulations within the available resources. A number of algorithms -- such as the seminal ParEGO -- have been developed for optimization in this setting, which iteratively estimate a surrogate model of the problem and use this to guide the choice of new candidate designs to evaluate. The present study introduces a new implementation of ParEGO and uses this to explore three hypotheses relating to one of the key configurable parameters in the algorithm: the choice of scalarizing norm. Two hypotheses relate to the theoretical trade-off between convergence speed and ability to capture an arbitrary geometry of Pareto front. Experiments confirm these hypotheses in the bi-objective setting but the trade-off is largely unseen in many-objective settings. A third hypothesis relates to the ability of dynamic norm scheduling schemes to overcome the trade-off. Experiments are conducted using a simple scheme, which offer partial support to the hypothesis in the bi-objective setting but no support in the many-objective setting. The use of norm scheduling is tentatively recommended for bi-objective problems for which the Pareto front geometry is concave or unknown.
+Designing complex engineered products requires expensive computational simulations. In this context design optimization using a limited budget (usually a budget of 250 to 500) to evaluate the candidate designs with high-fidelity simulations can be challenging even with high available resources. Solving the stochastic optimization problem, when uncertainty is taken into account, is more difficult even using the currents state of the art algorithms which iteratively computes a surrogate model of the problem and use this model to guide the search for the best location for a new candidate design to be evaluated. This work introduces a new algorithm sParEGO - stochastic ParEGO, which is a extension of Knowles ParEGO algorithm \cite{Knowles2006ParEGO}. To test the results of the algorithms two situational test problems have been developed using a toolkit for generating stochastic multi-objective test problems presented by Shaul et al. at Gecco 2006.    
+
+    
 \keywords{Expensive optimization, surrogate-based optimization, robust optimization}
 \end{abstract}
 
@@ -161,7 +163,7 @@ The framework we have developed aims to address these challenges for a single op
 
 \subsection{\label{sec:intro}Literature review}
 
-The framework leverage's ParEGO \cite{knowles2005multiobjective,Knowles200650}, an algorithm for multi-objective optimization, which has been demonstrated to provide good results for optimization runs limited to a small number of function evaluations. ParEGO itself is a multi-objective extension to Jones et al.'s \cite{Jones1998Efficient} seminal efficient global optimization (EGO) algorithm for single-objective problems. EGO is designed to search for the global optimum of a single, computationally expensive objective function. It uses a surrogate model estimated from previously evaluated designs to guide the search. An iterative procedure is performed to evaluate the design that has the highest probability to improve both
+The framework leverage's ParEGO \cite{knowles2005multiobjective,Knowles2006ParEGO}, an algorithm for multi-objective optimization, which has been demonstrated to provide good results for optimization runs limited to a small number of function evaluations. ParEGO itself is a multi-objective extension to Jones et al.'s \cite{Jones1998Efficient} seminal efficient global optimization (EGO) algorithm for single-objective problems. EGO is designed to search for the global optimum of a single, computationally expensive objective function. It uses a surrogate model estimated from previously evaluated designs to guide the search. An iterative procedure is performed to evaluate the design that has the highest probability to improve both
 the expected performance and the model's accuracy. The structure of EGO is as follows: first, an initial set of candidate solutions is constructed using Latin hypercube sampling \cite{Scheffe1958Experiments}, and evaluated by the expensive evaluation function. Next, the following iterative procedure is repeated: the existing evaluations are considered as an outcome of a stochastic process, and are used to construct a so-called design and analysis of computer experiments (DACE) model \cite{Sacks1989Design}, which maximizes the likelihood of the fitted model to the basis (i.e. known) points. The advantage of the DACE model is that it provides an estimation of its own error, in addition to the estimated function value at every point. \footnote{For further details on DACE model, please refer to original paper \textit{Design and Analysis of Computer Experiments} \cite{Sacks1989Design} an the excellent summary in \cite{Jones1998Efficient}.} 
 \begin{figure}
 \centering
@@ -194,10 +196,10 @@ The following assumptions are made by the EGO algorithm:
 	\item Deterministic problem - uncertainties are not present in any part of the problem     	     	      formulation, and therefore repeated evaluations of the same design yield the same   		          result.
 	\item Single objective problem - multi-objective optimization is not considered.
 	\item Locally smooth and continuous evaluation function - the DACE model assumes spatial 			      correlation in decision-space. This means that close solutions are expected to have 			      similar function values.
-	\item Low-to-medium number of decision variables - the DACE model's accuracy reduces when 	  		  the dimensionality of the decision-space exceeds approximately 20 variables \cite{Knowles200650}.	
+	\item Low-to-medium number of decision variables - the DACE model's accuracy reduces when 	  		  the dimensionality of the decision-space exceeds approximately 20 variables \cite{Knowles2006ParEGO}.	
 \end{enumerate}
 
-Knowles \cite{Knowles200650} extended EGO to solve multi-objective optimization problems with his algorithm ParEGO (the name implies the search for Pareto optimality). Apart from Assumption 4, ParEGO addresses the same types of problems as EGO. To achieve a multi-objective formulation, the overall multi-objective problem is decomposed into a number of single-objective problems by using a set of weighting vectors and a scalarising function (known as the weighted Chebyshev).
+Knowles \cite{Knowles2006ParEGO} extended EGO to solve multi-objective optimization problems with his algorithm ParEGO (the name implies the search for Pareto optimality). Apart from Assumption 4, ParEGO addresses the same types of problems as EGO. To achieve a multi-objective formulation, the overall multi-objective problem is decomposed into a number of single-objective problems by using a set of weighting vectors and a scalarising function (known as the weighted Chebyshev).
 More details on decomposition strategies are provided in Section 2. For every iteration of the optimizer, a random weighting vector is drawn from the available set, and a DACE model is constructed from the scalarised values of each objective vector. The next candidate solution to be investigated is the one with the highest expected improvement of the scalar function using the current weighting vector.
 The effectiveness of ParEGO at performing multi-objective optimization on a limited budget of function evaluations makes it a key candidate for further development for the purposes of the framework. There has been substantial progress in the literature on decomposition-based algorithms since ParEGO was published in 2005 (see \cite{giagkiozis2015overview} and references within) suggesting the potential for further improvements in performance. The main limitation of ParEGO is that it has not been designed to handle problems featuring uncertainty (although there is some evidence that it can perform favourably in noisy environments \cite{knowles2009noisy}). Therefore a fundamental part of the framework is how ParEGO can be extended to consider evaluation functions as samples of random variates. We refer to this new algorithm as stochastic ParEGO or sParEGO.
 
@@ -468,7 +470,7 @@ In robust design optimization, there is an inherent trade-off between the soluti
 \label{sec:results}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
-\vspace{-100pt}
+\vspace{-80pt}
 \begin{center}
 \includegraphics[scale=0.45]{testproblems}
 \end{center}
@@ -498,7 +500,7 @@ Figure \ref{fig:EI} illustrates the Expected Improvement results for the ParEGO 
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.45]{EI}
+\includegraphics[scale=0.45, center]{EI}
 \end{center}
 \caption{Expected Improvement of the P1 and P2 problems. Starting with the top figures in the left the ParEGO EI for each reference direction can be seen how it is improving over the number of evaluations, and the right sParEGO EI value are presented for the first test problem. Followed below by the results of the second test problem in the left for ParEGO and the right for sParEGO.}
 \label{fig:EI}
