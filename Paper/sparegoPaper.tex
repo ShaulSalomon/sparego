@@ -56,6 +56,7 @@
 \newcommand{\SSet}{\mathcal{S}} % set S
 \newcommand{\ISet}{\mathcal{I}} % set I
 \newcommand{\Pref}{\mathcal{P}} % Preferences set P
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor} % Floor operator
 
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 \DeclareMathOperator*{\argmax}{\arg\!\max}
@@ -119,7 +120,7 @@ Equation~\eqref{eq:confidence} can be used for two different robustness indicato
 \end{enumerate}
 
 
-The algorithm focuses on the following stochastic unconstrained multiobjective optimization problem (MOP):
+The algorithm focuses on the following stochastic unconstrained multi-objective optimization problem (MOP):
 \begin{align}
 \label{eq:mop}
 	\min_{\vx\in\Omega} \vZ=\vf\brr{\vx, \vU},
@@ -427,19 +428,43 @@ In robust design optimization, there is an inherent trade-off between the soluti
 \section{Results}
 \label{sec:results}
 
+%\begin{wrapfigure}{r}{0.5\textwidth}
+%\vspace{-80pt}
+%\begin{center}
+%\includegraphics[scale=0.45]{testproblems}
+%\end{center}
+%\vspace{-20pt}
+%\caption{Test problems P1 and P2}
+%\vspace{-20pt}
+%\label{fig:TestProblems}
+%\end{wrapfigure}
+
+To test the performance of sParEGO two situational testing problems based on a toolkit for generating stochastic multiobjective test problems \cite{Salomon2016Toolkit} where proposed. Using this toolkit the WFG4 problem has been modified to allow the modification of the modality (number of peaks), ruggedness, squeeze and the polynomial order as the equation \ref{eq:WFG4modified} explains:
+\begin{equation}
+\begin{aligned}
+	t1 &= \frac{|\vx-C|}{\floor{C-\vx}+C} \\
+	t2 &= \brr{4 \times A +2}\times\pi\times\brr{0.5 - \frac{t1}{2}} \\
+	t3 &= \brr{1-|t1|}^{2\times D} \\
+	\vf\brr{\vx, A, B, C, D, E} &= \frac{1+ \cos{t2 \times t3} + B\times |t1|^E}{B+2}
+\end{aligned}
+\label{eq:WFG4modified}
+\end{equation} 
+where $\vx$ is a vector of $n_x$ decision variables, $A$ is the number of local optima around the global optima, $B$ determines the ruggedness ($B \geq 0$ for a smooth surface), $C$ is the location of the global optima, $D$ determines how dense the hills get around the optimum, $E$ determines the polynomial order of the base curve, $\floor{\cdot}$ is the floor operator.
+
+The first test problem named P1 will be a fist degree polynomial deterministic problem, multi-modal around the optima and with a smooth surface, therefore $A = 5$, $B = 10$, $C = 0.45$, $D = 3$, and $E = 1$. 
+
+The second test problem named P2 will be a second degree polynomial stochastic problem and with no modality, therefore $A = 0$, $B = 10$, $C = 0.45$, $D = 0$, and $E = 2$. The two test problems can be seen in Figure \ref{fig:TestProblems}.  
+
 \begin{wrapfigure}{r}{0.5\textwidth}
-\vspace{-80pt}
+\vspace{-20pt}
 \begin{center}
 \includegraphics[scale=0.45]{testproblems}
 \end{center}
 \vspace{-20pt}
 \caption{Test problems P1 and P2}
-\vspace{-20pt}
+\vspace{-10pt}
 \label{fig:TestProblems}
 \end{wrapfigure}
-
-To test the performance of sParEGO we propose two situational testing problems based on a toolkit for generating stochastic multiobjective test problems \cite{Salomon2016Toolkit}. The first test problem named P1 is a fist degree polynomial deterministic problem, multi-modal around the optima and with a smooth surface. The second test problem named P2 is a second degree polynomial stochastic problem and has no modality. The two test problems can be seen in Figure \ref{fig:TestProblems}.  
-
 
 For both test problems sParEGO results have been compared with the ParEGO ones (being the state of the art algorithm for solving multi-objective optimization problems) using the same budget of 500 evaluation for a bi-objective problems with 5 decision variables, population size was 52 and the number of reference direction used was 11. Both ParEGO and sParEGO algorithms have been tested 21 times on each problem and the solution of the median run are presented in Figure \ref{fig:MedainRun} below.  
     
