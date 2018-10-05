@@ -63,7 +63,7 @@
 
 
 \begin{document}
-\title{sParEGO -- A Hybrid Optimization Algorithm for Expensive Uncertain Many-Objective Optimization Problems}
+\title{sParEGO -- A Hybrid Optimization Algorithm for Expensive Uncertain Multi-Objective Optimization Problems}
 \author{Robin C. Purshouse\inst{1} \and Shaul Salomon\inst{2} \and Daniel C. Oara\inst{1} \and Peter J. Fleming\inst{1}}
 \institute{Department of Automatic Control and Systems Engineering\\ University of Sheffield\\ Mappin Street, Sheffield S1 3JD, UK\\ \email{\{r.purshouse,dcoara1,p.fleming\}@sheffield.ac.uk}
 \and Department of Mechanical Engineering\\ ORT Braude College of Engineering, Karmiel, Israel\\ \email{shaulsal@braude.ac.il}}
@@ -71,7 +71,7 @@
 \maketitle
 
 \begin{abstract}
-Designing complex engineered products requires expensive computational simulations. In this context design optimization using a limited budget (usually a budget of 250 to 500) to evaluate the candidate designs with high-fidelity simulations can be challenging even with high available resources. Solving the stochastic optimization problem, when uncertainty is taken into account, is more difficult even using the currents state of the art algorithms which iteratively computes a surrogate model of the problem and use this model to guide the search for the best location for a new candidate design to be evaluated. This work introduces a new algorithm sParEGO - stochastic ParEGO, which is a extension of Knowles ParEGO algorithm \cite{Knowles2006ParEGO} to consider evaluation functions as samples of random variates. To test the results of the algorithm two situational test problems have been developed using a toolkit for generating stochastic multi-objective test problems presented by Shaul et al. at Gecco 2006.    
+Designing complex engineered products requires expensive computational simulations. In this context design optimization using a limited budget (usually a budget of 250 to 500) to evaluate the candidate designs with high-fidelity simulations can be challenging even with high available resources. Solving the stochastic optimization problem, when uncertainty is taken into account, is more difficult even using the currents state of the art algorithms which iteratively computes a surrogate model of the problem and use this model to guide the search for the best location for a new candidate design to be evaluated. This work introduces a new algorithm sParEGO - stochastic ParEGO, which is a extension of Knowles ParEGO algorithm \cite{Knowles2006ParEGO} to consider evaluation functions as samples of random variates. To test the results of the algorithm two situational test problems have been developed using a toolkit for generating stochastic multi-objective test problems presented by Shaul et al. at GECCO 2006.    
 
     
 \keywords{Expensive optimization, surrogate-based optimization, robust optimization}
@@ -143,7 +143,7 @@ To exacerbate this problem, optimizing for a robust solution is itself a computa
 demanding task. In order to gain confidence over the robustness of a solution to uncertainties, the statistical properties of the expected solution's performance must be quantised. In a world where the complexity of the high-fidelity models essentially produces a black-box mapping of inputs to outputs,such statistical properties would typically be found through repeated evaluation of the same solution using those high-fidelity models. Such Monte Carlo
 sampling of a single candidate design is computationally expensive.
 
-The framework we have developed aims to address these challenges for a single optimization node, situated within a wider family of nodes simultaneously working on the design of a complex engineered product. From the single-node perspective, the key characteristics of the problem formulation can be summarised as follows: 
+The framework developed here aims to address these challenges for a single optimization node, situated within a wider family of nodes simultaneously working on the design of a complex engineered product. From the single-node perspective, the key characteristics of the problem formulation can be summarised as follows: 
 \begin{itemize}
 	\item Expensive, black-box evaluation functions for a candidate design
 	\item Many objectives to be addressed simultaneously (i.e. more than three)
@@ -365,7 +365,7 @@ The intervals of $\mu_s\pm\sigma_s$ and $\mu_s\pm\sigma'_s$ are depicted in Figu
 
 Once the mean and variance of the scalar fitness function have been estimated for every solution in the set, the random variable $S\brr{\vx}$ is assumed to follow a normal distribution.
 Given a desired confidence level $c$, the robustness indicator $\Ic{S}$ can be calculated.
-An example for $\Ic{S}$ is given in Figure~\ref{subfig:indicator_estimation_2}.
+An example for $\Ic{S}$ is given in Figure \ref{fig:indicator_estimation}\ref{subfig:indicator_estimation_2}.
 The indicator value $\Ic{S}$ is considered as the solution's fitness at the current iteration.
 
 \subsection{Fitting a Surrogate Model to the Fitness}
@@ -411,73 +411,60 @@ In robust design optimization, there is an inherent trade-off between the soluti
 \begin{itemize}
 	\item When the robustness metric $\Iq{\bullet}$ is used, the confidence level $c$ can be specified.
 	\item When estimating the variance upper bound $\sigma^{\prime 2}_s$  in Equation~\eqref{eq:variance upper bound}, the confidence level $\alpha$ can be specified.
-	\item The value used for approximating the variance of isolated solutions $\sigma^{\prime\prime 2}_s$ in Figure~\ref{subfig:indicator_estimation_c}, represents a risk averse attitude. A less conservative approach would be not to consider a smaller value than the upper bound of the model prediction interval.
+	\item The value used for approximating the variance of isolated solutions $\sigma^{\prime\prime 2}_s$ in Figure \ref{fig:indicator_estimation}\ref{subfig:indicator_estimation_c}, represents a risk averse attitude. A less conservative approach would be not to consider a smaller value than the upper bound of the model prediction interval.
 	\item The value $\delta$--the maximum distance between solutions to be considered as neighbours--affects the variance of solutions and the convergence rate.
 		For smooth and continuous functions, a tight neighbourhood is likely to result in smaller variance, but also uses less information from other solutions, which reduces convergence rate.
 \end{itemize}
-
-\begin{figure}
-\centering
-\def\svgwidth{0.45\textwidth}
-\import{figures/}{convergence_hv.pdf_tex}
-\caption{WE CAN USE THIS FIGURE TO EXPLAIN THE COMPARISON BETWEEN ParEGO AND sParEGO. OR DID WE USE THE PERCENTILES OF THE MARGINAL DISTRIBUTIONS?}
-\label{fig:convergence}
-\end{figure}
 
 
 \section{Results}
 \label{sec:results}
 
-%\begin{wrapfigure}{r}{0.5\textwidth}
-%\vspace{-80pt}
-%\begin{center}
-%\includegraphics[scale=0.45]{testproblems}
-%\end{center}
-%\vspace{-20pt}
-%\caption{Test problems P1 and P2}
-%\vspace{-20pt}
-%\label{fig:TestProblems}
-%\end{wrapfigure}
-
-To test the performance of sParEGO two situational testing problems based on a toolkit for generating stochastic multiobjective test problems \cite{Salomon2016Toolkit} where proposed. Using this toolkit the WFG4 problem has been modified to allow the modification of the modality (number of peaks), ruggedness, squeeze and the polynomial order as the equation \ref{eq:WFG4modified} explains:
+To test the performance of sParEGO two situational testing problems where proposed based on a toolkit for generating stochastic multiobjective test problems \cite{Salomon2016Toolkit}. Using this toolkit the WFG4 problem has been modified to allow changes in modality (number of peaks), ruggedness, squeeze and the polynomial order into the equation \ref{eq:WFG4modified}:
 \begin{equation}
 \begin{aligned}
-	t1 &= \frac{|\vx-C|}{\floor{C-\vx}+C} \\
-	t2 &= \brr{4 \times A +2}\times\pi\times\brr{0.5 - \frac{t1}{2}} \\
-	t3 &= \brr{1-|t1|}^{2\times D} \\
-	\vf\brr{\vx, A, B, C, D, E} &= \frac{1+ \cos{t2 \times t3} + B\times |t1|^E}{B+2}
+	\vf\brr{\vx, A, B, C, D, E} &= \frac{1+ \cos \brr{t2(\vx) \times t3(\vx)} + B\times |t1(\vx)|^E}{B+2}	\\
+	t1(\vx) &= \frac{|\vx-C|}{\floor{C-\vx}+C} \\
+	t2(\vx) &= \brr{4 \times A +2}\times\pi\times\brr{0.5 - \frac{t1(\vx)}{2}} \\
+	t3(\vx) &= \brr{1-|t1(\vx)|}^{2\times D} 
 \end{aligned}
 \label{eq:WFG4modified}
 \end{equation} 
-where $\vx$ is a vector of $n_x$ decision variables, $A$ is the number of local optima around the global optima, $B$ determines the ruggedness ($B \geq 0$ for a smooth surface), $C$ is the location of the global optima, $D$ determines how dense the hills get around the optimum, $E$ determines the polynomial order of the base curve, $\floor{\cdot}$ is the floor operator.
+where: $\vx$ is a vector of $n_x$ decision variables, $A$ is the number of local optima around the global optima, $B$ determines the ruggedness ($B \geq 0$ for a smooth surface), $C$ is the location of the global optima, $D$ determines how dense the hills get around the optimum, $E$ determines the polynomial order of the base curve, $\floor{\cdot}$ is the floor operator.
 
 The first test problem named P1 will be a fist degree polynomial deterministic problem, multi-modal around the optima and with a smooth surface, therefore $A = 5$, $B = 10$, $C = 0.45$, $D = 3$, and $E = 1$. 
 
-The second test problem named P2 will be a second degree polynomial stochastic problem and with no modality, therefore $A = 0$, $B = 10$, $C = 0.45$, $D = 0$, and $E = 2$. The two test problems can be seen in Figure \ref{fig:TestProblems}.  
+The second test problem named P2 will be a second degree polynomial stochastic problem and with no modality, therefore $A = 0$, $B = 10$, $C = 0.45$, $D = 0$, 	and $E = 2$. To make the problem stochastic a uniform distribution is applied where the lower bound value is deterministic and solutions that a far from the deterministic front will have no radial uncertainty ($i.e. \Psi_r \geq 0.5$) and as they get closer to the front the radian uncertainty will increase, as given in equation \ref{eq:RadialFcn}, \cite{Salomon2016Toolkit}: 
+
+\begin{align}
+	\label{eq:RadialFcn} P\brr{\rho} = P_u\brr{\rho,\Psi_r,\Phi_{SI}\brr{\Psi_r , 0.4}}.
+\end{align} 
+where: $P$ is the probability density function over the interval $\rho \in [0,1]$, $\rho$ is a random variable, $P_u$ is the uniform density function, $\Psi_r$ is the remoteness parameter of the uncertainty kernel and describes remoteness the from the deterministic Pareto front and $\Phi_{SI}$ is the skewed increase function as given in Shaul et al. (2006).     
+
 
 \begin{wrapfigure}{r}{0.5\textwidth}
-\vspace{-20pt}
+\vspace{-35pt}
 \begin{center}
 \includegraphics[scale=0.45]{testproblems}
 \end{center}
-\vspace{-20pt}
+\vspace{-15pt}
 \caption{Test problems P1 and P2}
-\vspace{-10pt}
+\vspace{-15pt}
 \label{fig:TestProblems}
 \end{wrapfigure}
 
-For both test problems sParEGO results have been compared with the ParEGO ones (being the state of the art algorithm for solving multi-objective optimization problems) using the same budget of 500 evaluation for a bi-objective problems with 5 decision variables, population size was 52 and the number of reference direction used was 11. Both ParEGO and sParEGO algorithms have been tested 21 times on each problem and the solution of the median run are presented in Figure \ref{fig:MedainRun} below.  
+The two test problems can be seen in Figure \ref{fig:TestProblems}. For both test problems sParEGO results have been compared with the ParEGO ones using the same budget of 500 evaluation for a bi-objective problems with 5 decision variables, population size was 52 and the number of reference direction used was 11. Both ParEGO and sParEGO algorithms have been tested 21 times on each problem and the solution of the median run are presented in Figure \ref{fig:MedianRun} below.  
     
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.5\textwidth, center]{P1P2}
 \caption{Median run of test problems P1 and P2. Starting with the top left corner the median run estimates of the ParEGO and sParEGO algorithms for the first problem can be observed, followed by the graph of the 90 percentile Monte Carlo validation and in the top right corner is the Hypervolume measure of the validated robust solutions. The bottom of the figure presents the results of the second problems starting in the left with median run estimates of the ParEGO and sParEGO algorithms, followed by the 90 percentile Monte Carlo validation and in the bottom left corner is the Hypervolume measure of the validated robust solutions.}
-\label{fig:MedainRun}
+\label{fig:MedianRun}
 \end{figure}
 
-In Figure \ref{fig:MedainRun} can be observed in the top graphs the result of the P1 test problem. The problem is deterministic and ParEGO manage to find the pareto front with a better accuracy than sParEGO, as sParEGO is designed to be more restrictive and find robust solutions. This can be confirmed by the Monte Carlo validation, the sParEGO result are better that the estimates and come closer to the pareto front. The last figure in the first top right corner presents the Hypervolume measure of both algorithms for the median run.
+In Figure \ref{fig:MedianRun} can be observed in the top graphs the result of the P1 test problem. The problem is deterministic and ParEGO manage to find the Pareto front with a better accuracy than sParEGO, as sParEGO is designed to be more restrictive and find robust solutions. This can be confirmed by the Monte Carlo validation, the sParEGO result are better that the estimates and come closer to the Pareto front. The last figure in the first top right corner presents the Hypervolume measure of both algorithms for the median run.
 
-On the Figure \ref{fig:MedainRun} bottom graphs are the results of the P2 test problem. Can be seen in the bottom left one that the ParEGO estimates can not find the pareto front because of the uncertainty in the problem formulation, as close you get to the pareto front more uncertainty will be present. sParEGO in the other hand manage to be closer to the pareto front as the second graphs confirms by validation using Monte Carlo and tating the 90 percentile of the distribution. In the last bottom right figure the hypervolume measure of both algortims is presented. From here can be concluded that sParEGO finds a better approximation of the robust pareto front, therefore using sParEGO in solving stochastic multiobjective optimization problems will give to the decision maker estimates that are closer to the true solutions and by validating the selected design the true performance can be recorded.
+On the Figure \ref{fig:MedianRun} bottom graphs the results of the P2 test problem are presented. Can be seen in the bottom left one that the ParEGO estimates can not find the robust Pareto front because of the uncertainty in the problem formulation, as closer you get to the front more uncertainty will be present. sParEGO in the other hand manage to be closer to the robust Pareto front as the second graphs confirms by validation using Monte Carlo and taking the 90 percentile of the distribution as the final design. In the last bottom right figure the hypervolume measure of both algorithms is presented. From here can be concluded that sParEGO finds a better approximation of the robust front, therefore using sParEGO in solving stochastic multi-objective optimization problems will give to the decision maker estimates that are closer to the true robust solutions and by validating the selected design the robust performance can be recorded.
     
 Figure \ref{fig:EI} illustrates the Expected Improvement results for the ParEGO in the left graphs for the P1$\&$P2  problems  and sParEGO in the right graphs. The lines represents the improvement on each reference direction over the number of evaluations. The number of reference direction was set to 11 and the budget for both algorithms was set to 500. 
 
