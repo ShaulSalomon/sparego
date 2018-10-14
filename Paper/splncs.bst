@@ -234,7 +234,16 @@ FUNCTION {format.springer.names}
     { namesleft #0 > }
     { s nameptr "{vv~}{ll}{, jj}{, f{.}.}" format.name$ 't :=
       nameptr #1 >
-        { namesleft #1 >
+         {
+          nameptr #1
+          #1 + =
+          numnames #1
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
             { ", " * t * }
             { numnames #1 >
                 { ", " * }
@@ -1093,6 +1102,7 @@ FUNCTION {end.bib}
 }
 
 EXECUTE {end.bib}
+
 
 
 

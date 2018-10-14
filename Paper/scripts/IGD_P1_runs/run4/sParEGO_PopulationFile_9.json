@@ -1,0 +1,631 @@
+{
+    "Populations": [
+        {
+            "Size": 10,
+            "Solutions": [
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.2990689553882066,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.00010429402554414539
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 0
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 5.1086760441327623
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 7.6332490307283285
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 7.7740779173737842
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    1.9385077482295212,
+                                    0.05767466742433195
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 1.9650514867451423
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    2.9547439597469984,
+                                    0.1436197968829587
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 2.8344464722971097
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.88888888888888884,
+                        0.1111111111111111
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.64856006011365241,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.21970595798860379
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 0.24678636085805616
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.5668113792142344
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 4.7246864415106717
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.6563564805672288
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    1.416522700087683,
+                                    0.14845329160989221
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 1.4622323408456865
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    3.5207647072252684,
+                                    0.18826706625306353
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 3.4274567339704873
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.55555555555555558,
+                        0.44444444444444442
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.29583393878310804,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.0018680397322288235
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 0.0057907711190835721
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 5.0848562125026939
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 7.213898327941207
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 7.3848433068009882
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    1.9341510999050793,
+                                    0.058506524055346759
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 1.9542881528600262
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    2.9477675601064299,
+                                    0.14456789331248582
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 2.8342757703165637
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        1,
+                        0
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.91884666185910036,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.86362451558115327
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.3884619202314445
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.0497271553714018
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 6.4191622366718821
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.5940616714865838
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    0.64120120354491628,
+                                    0.15603287423336223
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 0.63772760394592498
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    4.1694168774412219,
+                                    0.05830550061359957
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 4.1558823461694221
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.1111111111111111,
+                        0.88888888888888884
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.69237323429720599,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.77780204231974914
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 0
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.179977045310423
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 4.5485410524271987
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.4366055642245765
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    1.1771123116050737,
+                                    0.12692336669140206
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 1.2054025286169059
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    3.640225196926183,
+                                    0.15606773473426361
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 3.6500485766225128
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.66666666666666663,
+                        0.33333333333333331
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.92088410879284699,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.84922025247760691
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.5236933571458646
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.0834442663404613
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 6.5092601441866096
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 0.48959983066712259
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    0.66504274183566858,
+                                    0.15370596072852466
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 0.84790884389024768
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    4.1714452101530108,
+                                    0.059542590616140957
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 4.1172818452261648
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.1111111111111111,
+                        0.88888888888888884
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.29966824658009417,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 0
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 5.1684824084090888
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 7.476615844014602
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 8.1298061097294276
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    1.9375474078317649,
+                                    0.057067528986783175
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 1.9546592637904969
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    2.9594466967628321,
+                                    0.14078325184671656
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 2.8238325923951417
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.88888888888888884,
+                        0.1111111111111111
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.91215179490940812,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 1.1202525284300791
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.5487166405425821
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.0214266387082569
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 6.2193855788538368
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.0348728527160747
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    0.71939098551409153,
+                                    0.1539788569237075
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 0.80629472864474194
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    4.1528937794378606,
+                                    0.061854475113393058
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 4.1288514541930414
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.22222222222222221,
+                        0.77777777777777779
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.64856006011365241,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.21970595798860379
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 0.24678636085805616
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.5668113792142344
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 4.7246864415106717
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.6563564805672288
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    1.416522700087683,
+                                    0.14845329160989221
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 1.4622323408456865
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    3.5207647072252684,
+                                    0.18826706625306353
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 3.4274567339704873
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.55555555555555558,
+                        0.44444444444444442
+                    ]
+                },
+                {
+                    "Constraints Evaluated": true,
+                    "Cost": 0.91884666185910036,
+                    "Decision Vec": [
+                        {
+                            "type": "Real Type",
+                            "value": 0.86362451558115327
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.3884619202314445
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 2.0497271553714018
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 6.4191622366718821
+                        },
+                        {
+                            "type": "Real Type",
+                            "value": 1.5940616714865838
+                        }
+                    ],
+                    "Objective Vec": [
+                        {
+                            "dist": {
+                                "parameters": [
+                                    0.64120120354491628,
+                                    0.15603287423336223
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 0.63772760394592498
+                        },
+                        {
+                            "dist": {
+                                "parameters": [
+                                    4.1694168774412219,
+                                    0.05830550061359957
+                                ],
+                                "type": "NormalDistType"
+                            },
+                            "type": "Real Type",
+                            "value": 4.1558823461694221
+                        }
+                    ],
+                    "Objectives Evaluated": true,
+                    "Parameter Vec": [
+                    ],
+                    "Run Number": 1,
+                    "Scalarised": false,
+                    "Solution Evaluated": true,
+                    "Unused Vec": [
+                    ],
+                    "Weight Vec": [
+                        0.1111111111111111,
+                        0.88888888888888884
+                    ]
+                }
+            ],
+            "Tags": "",
+            "Time": "Tue Oct  9 18:57:52 2018\n"
+        }
+    ]
+}

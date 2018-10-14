@@ -1,8 +1,9 @@
+% Encoding: UTF-8
 @article{Ginley2011,
 author = {Ginley, B Mc and Maher, J and O'Riordan, C and Morgan, F},
 doi = {10.1109/TEVC.2010.2046173},
 issn = {1089-778X VO  - 15},
-journal = {IEEE Transactions on Evolutionary Computation},
+journal = {IEEE T Evolut Comput},
 keywords = {ACROMUSE fitness landscape change,ACROMUSE tournament selection,Algorithm design and analysis,Convergence,Genetic algorithm parameter adaptation,Genetic algorithms,Genetics,HPD,Optimization,Pressure measurement,SPD measure,Size measurement,adapting tournament size,adaptive crossover,adaptive mutation,adaptive operator,adaptive selection pressure control,diverse population,genetic algorithm,genetic algorithms,healthy population diversity,multimodal benchmark function,multimodal fitness landscape,standard population diversity performance},
 number = {5},
 pages = {692--714},
@@ -60,20 +61,18 @@ We consider the 2-OPT neighborhood function on a three objective traveling sales
   title={Multiobjective optimization on a budget of 250 evaluations},
   author={Knowles, Joshua and Hughes, Evan J},
   abstract={In engineering and other ‘real-world’ applications, multiobjective optimization problems must frequently be tackled on a tight evaluation budget — tens or hundreds of function evaluations, rather than thousands. In this paper, we investigate two algorithms that use advanced initialization and search strategies to operate better under these conditions. The first algorithm, Bin_MSOPS, uses a binary search tree to divide up the decision space, and tries to sample from the largest empty regions near ‘fit’ solutions. The second algorithm, ParEGO, begins with solutions in a latin hypercube and updates a Gaussian processes surrogate model of the search landscape after every function evaluation, which it uses to estimate the solution of largest expected improvement. The two algorithms are tested using a benchmark suite of nine functions of two and three objectives — on a budget of only 250 function evaluations each, in total. Results indicate that the two algorithms search the space in very different ways and this can be used to understand performance differences. Both algorithms perform well but ParEGO comes out on top in seven of the nine test cases after 100 function evaluations, and on six after the first 250 evaluations.},
-  booktitle={Evolutionary Multi-Criterion Optimization},
+  booktitle={Proc. EMO 2005},
   pages={176--190},
-  year={2005},
-  organization={Springer}
+  year={2005}
 }
 
 @inproceedings{knowles2009noisy,
   title={Noisy multiobjective optimization on a budget of 250 evaluations},
   author={Knowles, Joshua and Corne, David and Reynolds, Alan},
-  booktitle={Evolutionary Multi-Criterion Optimization},
+  booktitle={Proc. EMO 2009},
   abstract = {We consider methods for noisy multiobjective optimization, specifically methods for approximating a true underlying Pareto front when function evaluations are corrupted by Gaussian measurement noise on the objective function values. We focus on the scenario of a limited budget of function evaluations (100 and 250), where previously it was found that an iterative optimization method — ParEGO — based on surrogate modeling of the multiobjective fitness landscape was very effective in the non-noisy case. Our investigation here measures how ParEGO degrades with increasing noise levels. Meanwhile we introduce a new method that we propose for limited-budget and noisy scenarios: TOMO, deriving from the single-objective PB1 algorithm, which iteratively seeks the basins of optima using nonparametric statistical testing over previously visited points. We find ParEGO tends to outperform TOMO, and both (but especially ParEGO), are quite robust to noise. TOMO is comparable and perhaps edges ParEGO in the case of budgets of 100 evaluations with low noise. Both usually beat our suite of five baseline comparisons.},
   pages={36--50},
-  year={2009},
-  organization={Springer}
+  year={2009}
 }
 
 @InProceedings{Cristescu2015ParEGOupdate,
@@ -124,8 +123,7 @@ abstract = {Methods for generating Pareto optimal solutions to a multicriterion 
 author = {Koski, Juhani and Silvennoinen, Risto},
 doi = {10.1002/nme.1620240606},
 issn = {1097-0207},
-journal = {International Journal for Numerical Methods in Engineering},
-month = jun,
+journal = {Inter J Numer Method E},
 number = {6},
 pages = {1101--1121},
 publisher = {John Wiley \& Sons, Ltd},
@@ -189,7 +187,7 @@ author = {Jones, DonaldR. and Schonlau, Matthias and Welch, WilliamJ.},
 doi = {10.1023/A:1008306431147},
 file = {:Users/acse/Downloads/art\%3A10.1023\%2FA\%3A1008306431147.pdf:pdf},
 issn = {0925-5001},
-journal = {Journal of Global Optimization},
+journal = {J Global Optim},
 keywords = {Bayesian global optimization,Kriging,Random function,Response surface,Stochastic process,Visualization},
 language = {English},
 number = {4},
@@ -217,7 +215,7 @@ year = {2010}
 @article{Knowles2006ParEGO,
 abstract = {This paper concerns multiobjective optimization in scenarios where each solution evaluation is financially and/or temporally expensive. We make use of nine relatively low-dimensional, nonpathological, real-valued functions, such as arise in many applications, and assess the performance of two algorithms after just 100 and 250 (or 260) function evaluations. The results show that NSGA-II, a popular multiobjective evolutionary algorithm, performs well compared with random search, even within the restricted number of evaluations used. A significantly better performance (particularly, in the worst case) is, however, achieved on our test set by an algorithm proposed herein-ParEGO-which is an extension of the single-objective efficient global optimization (EGO) algorithm of Jones et al. ParEGO uses a design-of-experiments inspired initialization procedure and learns a Gaussian processes model of the search landscape, which is updated after every function evaluation. Overall, ParEGO exhibits a promising performance for multiobjective optimization problems where evaluations are expensive or otherwise restricted in number.},
 author = {Knowles, J},
-journal = {Evolutionary Computation, IEEE Transactions on},
+journal = {IEEE T Evolut Comput},
 doi = {10.1109/TEVC.2005.851274},
 file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Knowles - 2006 - ParEGO A Hybrid Algorithm With On-Line Landscape Approximation for Expensive Multiobjective Optimization Problems.pdf:pdf},
 isbn = {1089-778X VO - 10},
@@ -264,9 +262,8 @@ author = {Zhou, Aimin and Qu, Bo-Yang and Li, Hui and Zhao, Shi-Zheng and Sugant
 doi = {10.1016/j.swevo.2011.03.001},
 file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Zhou et al. - 2011 - Multiobjective evolutionary algorithms A survey of the state of the art.pdf:pdf},
 issn = {22106502},
-journal = {Swarm and Evolutionary Computation},
+journal = {Swarm Evol Comput},
 keywords = {evolutionary multiobjective optimization,multiobjective evolutionary algorithms,multiobjective optimization},
-month = mar,
 number = {1},
 pages = {32--49},
 publisher = {Elsevier B.V.},
@@ -280,9 +277,8 @@ author = {Beyer, Hans Georg and Sendhoff, Bernhard},
 doi = {10.1016/j.cma.2007.03.003},
 file = {:Users/acse/Library/Application Support/Mendeley Desktop/Downloaded/Beyer, Sendhoff - 2007 - Robust optimization – A comprehensive survey.pdf:pdf},
 issn = {00457825},
-journal = {Computer Methods in Applied Mechanics and Engineering},
+journal = {Comput Method Appl M},
 keywords = {design,direct search methods,evolutionary computation,handling design uncertainties,mathematical programming,noisy optimization,robust,robust optimization},
-month = jul,
 number = {33-34},
 pages = {3190--3218},
 title = {Robust Optimization - A Comprehensive Survey},
@@ -304,7 +300,7 @@ year = {1995}
 @article{deb2002fast,
   title={A fast and elitist multiobjective genetic algorithm: {NSGA-II}},
   author={Deb, Kalyanmoy and Pratap, Amrit and Agarwal, Sameer and Meyarivan, TAMT},
-  journal={Evolutionary Computation, IEEE Transactions on},
+  journal={IEEE T Evolut Comput},
   volume={6},
   number={2},
   pages={182--197},
@@ -315,7 +311,7 @@ year = {1995}
 @article{giagkiozis2014generalized,
   title={Generalized decomposition and cross entropy methods for many-objective optimization},
   author={Giagkiozis, Ioannis and Purshouse, Robin C and Fleming, Peter J},
-  journal={Information Sciences},
+  journal={Inform Sciences},
   volume={282},
   pages={363--387},
   year={2014},
@@ -367,14 +363,22 @@ doi={10.1109/4235.797969},
 ISSN={1089-778X},}
 
 @inproceedings{Salomon2016Toolkit,
-    address = {Denver, CO, USA},
     author = {Salomon, S. and Purshouse, R.C. and Giagkiozis, I. and Fleming, P.J.},
-    booktitle = {Proceedings of the 2016 Annual Conference on Genetic and Evolutionary Computation},
+    booktitle = {Proc. GECCO 2016},
     isbn = {9781450342063},
     title = {{A Toolkit for Generating Scalable Stochastic Multiobjective Test Problems}},
     year = {2016}
 }
 
+@article{Knowles200650,
+author={Knowles, J.},
+title={{ParEGO}: A hybrid algorithm with on-line landscape approximation for expensive multiobjective optimization problems},
+journal={IEEE T Evolut Comput},
+year={2006},
+volume={10},
+number={1},
+pages={50--66},
+}
 
 @article{giagkiozis2015overview,
   title={An overview of population-based algorithms for multi-objective optimisation},
@@ -384,3 +388,28 @@ ISSN={1089-778X},}
   pages={1--28},
   year={Aug.2013},
 }
+
+@Article{bib:wfg_2006,
+  author  = {S. Huband and P. Hingston and L. Barone and L. While},
+  title   = {A review of multiobjective test problems and a scalable test problem toolkit},
+  journal = {IEEE T Evolut Comput},
+  year    = {2006},
+  volume  = {10},
+  number  = {5},
+  pages   = {477-506},
+  issn    = {1089-778X},
+  doi     = {10.1109/TEVC.2005.861417},
+}
+
+@InProceedings{bib:generational_distance,
+  author    = {Van Veldhuizen, D.A. and Lamont, G.B.},
+  title     = {On measuring multiobjective evolutionary algorithm performance},
+  booktitle = {Proc. CEC 2000},
+  year      = {2000},
+  volume    = {1},
+  pages     = {204--211},
+  owner     = {jduro},
+  timestamp = {2012.08.23},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

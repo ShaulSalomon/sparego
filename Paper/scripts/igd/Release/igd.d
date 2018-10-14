@@ -1,0 +1,1 @@
+igd.d: ../igd.cpp
